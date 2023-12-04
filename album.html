@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="/assets/css/styles.css" />
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+            crossorigin="anonymous" />
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+            crossorigin="anonymous"></script>
+        <script src="https://kit.fontawesome.com/3751e25f14.js" crossorigin="anonymous"></script>
+        <title>Praças</title>
+    </head>
+
+    <body>
+        <header>
+            <h1><a href="index.html" id="titulo"></a></h1>
+            <nav>
+                <ul>
+                    <li><a href="#descricao">Descrição</a></li>
+                    <li><a href="#itens">Itens</a></li>
+                </ul>
+            </nav>
+        </header>
+        <main>
+            <section>
+                <h2>Descrição</h2>
+                <hr />
+                <div class="imagem-float">
+                    <img id="main-image" class="main-album rounded" />
+                    <div>
+                        <h3>Descrição</h3>
+                        <p id="descricao"></p>
+                        <table>
+                            <tr>
+                                <th>Localização</th>
+                                <th>Data</th>
+                            </tr>
+                            <tr>
+                                <td id="coordenadas"></td>
+                                <td id="ano"></td>
+                            </tr>
+                        </table>
+                        <div>
+                            <input type="checkbox" id="destaque" name="destaque"/>
+                            <label for="destaque">Destaque</label>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section>
+                <h2 id="itens">Itens (fotos)</h2>
+                <hr />
+                <div id="photos-list" class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 row-cols-xl-4 g-4 lista-albuns"></div>
+            </section>
+        </main>
+        <script src="assets/scripts/album.js"></script>
+    </body>
+</html>
