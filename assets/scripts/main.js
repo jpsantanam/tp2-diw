@@ -39,10 +39,10 @@ async function renderPage() {
     const map = getMap();
     getLocations(map);
 
-    if (!highlights) {
-        document.getElementById('section-destaques').classList.toggle('hidden');
+    if (highlights.length == 0) {
+        document.getElementById('section-destaques').classList.add('hidden');
     } else {
-        document.getElementById('section-destaques').classList.toggle('hidden');
+        document.getElementById('section-destaques').classList.remove('hidden');
         for (let i = 0; i < highlights.length; i++) {
             const album = await fetchAlbum(highlights[i].albumId);
 
@@ -53,11 +53,14 @@ async function renderPage() {
                 carouselItem.classList.add('active');
             }
 
+            const imageLink = document.createElement('a');
+            imageLink.setAttribute('href', `album.html?id=${album.id}`);
+
             const carouselImage = document.createElement('img');
             carouselImage.setAttribute('src', album.cover);
 
-            carouselItem.appendChild(carouselImage);
-
+            imageLink.appendChild(carouselImage);
+            carouselItem.appendChild(imageLink);
             carouselInner.appendChild(carouselItem);
         }
     }
