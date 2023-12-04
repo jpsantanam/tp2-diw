@@ -54,7 +54,7 @@ async function renderPage() {
             }
 
             const imageLink = document.createElement('a');
-            imageLink.setAttribute('href', `album.html?id=${album.id}`);
+            imageLink.setAttribute('href', `./album.html?id=${album.id}`);
 
             const carouselImage = document.createElement('img');
             carouselImage.setAttribute('src', album.cover);
@@ -90,7 +90,7 @@ async function renderPage() {
         const cardButton = document.createElement('a');
         cardButton.classList.add('btn', 'btn-primary');
         cardButton.innerText = 'Ver detalhes';
-        cardButton.setAttribute('href', `album.html?id=${album.id}`);
+        cardButton.setAttribute('href', `./album.html?id=${album.id}`);
 
         cardBody.appendChild(cardTitle);
         cardBody.appendChild(cardText);

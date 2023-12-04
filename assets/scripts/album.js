@@ -49,7 +49,7 @@ async function renderPage() {
         cardText.innerText = photo.description;
 
         const cardButton = document.createElement('a');
-        cardButton.setAttribute('href', `item.html?id=${album.id}`);
+        cardButton.setAttribute('href', `./item.html?id=${album.id}`);
 
         cardBody.appendChild(cardText);
 
