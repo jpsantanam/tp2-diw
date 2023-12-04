@@ -153,6 +153,10 @@ table {
     margin-right: 4rem;
 }
 
+.hidden {
+    display: none;
+}
+
 #carouselExampleControls {
     max-width: 800px;
     margin: 0 auto;

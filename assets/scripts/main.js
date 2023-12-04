@@ -39,22 +39,27 @@ async function renderPage() {
     const map = getMap();
     getLocations(map);
 
-    for (let i = 0; i < highlights.length; i++) {
-        const album = await fetchAlbum(highlights[i].albumId);
+    if (!highlights) {
+        document.getElementById('section-destaques').classList.toggle('hidden');
+    } else {
+        document.getElementById('section-destaques').classList.toggle('hidden');
+        for (let i = 0; i < highlights.length; i++) {
+            const album = await fetchAlbum(highlights[i].albumId);
 
-        const carouselItem = document.createElement('div');
-        carouselItem.classList.add('carousel-item');
+            const carouselItem = document.createElement('div');
+            carouselItem.classList.add('carousel-item');
 
-        if (i == 0) {
-            carouselItem.classList.add('active');
+            if (i == 0) {
+                carouselItem.classList.add('active');
+            }
+
+            const carouselImage = document.createElement('img');
+            carouselImage.setAttribute('src', album.cover);
+
+            carouselItem.appendChild(carouselImage);
+
+            carouselInner.appendChild(carouselItem);
         }
-
-        const carouselImage = document.createElement('img');
-        carouselImage.setAttribute('src', album.cover);
-
-        carouselItem.appendChild(carouselImage);
-
-        carouselInner.appendChild(carouselItem);
     }
 
     for (let album of albuns) {
