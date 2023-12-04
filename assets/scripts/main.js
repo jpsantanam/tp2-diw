@@ -32,7 +32,7 @@ async function renderPage() {
     function getLocations(map) {
         for (let album of albuns) {
             const popup = new mapboxgl.Popup({ offset: 25 }).setHTML(getCardMarker(album));
-            const marker = new mapboxgl.Marker({ color: 'red' }).setLngLat(album.coordinates).setPopup(popup).addTo(map);
+            new mapboxgl.Marker({ color: 'red' }).setLngLat(album.coordinates).setPopup(popup).addTo(map);
         }
     }
 
